@@ -1,10 +1,10 @@
-09:56:49 **** Incremental Build of configuration Debug for project GPIO_FAULT ****
+17:45:50 **** Incremental Build of configuration Debug for project GPIO_FAULT ****
 make -j7 all 
 arm-none-eabi-size   GPIO_FAULT.elf 
    text	   data	    bss	    dec	    hex	filename
-  24784	    732	   2364	  27880	   6ce8	GPIO_FAULT.elf
+  29008	    732	   2732	  32472	   7ed8	GPIO_FAULT.elf
 Finished building: default.size.stdout
  
 
-09:56:49 Build Finished. 0 errors, 0 warnings. (took 96ms)
+17:45:50 Build Finished. 0 errors, 0 warnings. (took 199ms)
 
