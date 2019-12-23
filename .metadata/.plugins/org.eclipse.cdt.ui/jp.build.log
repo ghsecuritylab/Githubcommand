@@ -1,0 +1,10 @@
+14:34:47 **** Incremental Build of configuration Debug for project jp ****
+make -j7 all 
+arm-none-eabi-size   jp.elf 
+   text	   data	    bss	    dec	    hex	filename
+   9516	     20	   1716	  11252	   2bf4	jp.elf
+Finished building: default.size.stdout
+ 
+
+14:34:47 Build Finished. 0 errors, 0 warnings. (took 89ms)
+

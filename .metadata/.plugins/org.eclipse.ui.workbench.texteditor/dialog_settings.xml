@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
+		<item key="selection" value="valuecommand"/>
+		<item key="wrap" value="true"/>
+		<item key="casesensitive" value="false"/>
+		<item key="wholeword" value="false"/>
+		<item key="incremental" value="false"/>
+		<item key="isRegEx" value="false"/>
+		<list key="findhistory">
+			<item value="valuecommand"/>
+			<item value="afterblank"/>
+			<item value="timer13"/>
+			<item value="valuebuffer"/>
+			<item value="front"/>
+			<item value="rxdata"/>
+			<item value="combuffer"/>
+			<item value="commandstone"/>
+			<item value="commandtrue"/>
+			<item value="match"/>
+			<item value="length"/>
+			<item value="interlock"/>
+			<item value="tempalarm"/>
+			<item value="enable"/>
+			<item value="fault"/>
+		</list>
+		<list key="replacehistory">
+			<item value="variable[INTERLOCK]"/>
+			<item value="variable[TEMPALARM]"/>
+			<item value="variable[TEMPA]"/>
+			<item value="variable[enable]"/>
+			<item value="variable[FAULT]"/>
+			<item value="matchforcommandswitch"/>
+			<item value="indexforcommandswitch"/>
+			<item value="blankexistpara"/>
+			<item value=""/>
+			<item value="valuebuffer[commandbufferstack]"/>
+			<item value="strlen(commandlist)"/>
+			<item value="invalid"/>
+			<item value="ivaild"/>
+			<item value="modecommand[front]"/>
+			<item value="SIZE"/>
+		</list>
+	</section>
+	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">
+		<item key="DIALOG_X_ORIGIN" value="768"/>
+		<item key="DIALOG_Y_ORIGIN" value="327"/>
+		<item key="DIALOG_WIDTH" value="294"/>
+		<item key="DIALOG_HEIGHT" value="408"/>
+		<item key="DIALOG_FONT_NAME" value="1|.AppleSystemUIFont|11.0|0|COCOA|1|.AppleSystemUIFont"/>
+	</section>
+</section>

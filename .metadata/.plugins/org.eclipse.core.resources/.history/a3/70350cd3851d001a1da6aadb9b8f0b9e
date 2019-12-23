@@ -1,0 +1,24 @@
+/*
+ * commandexecute.h
+ *
+ *  Created on: Dec 10, 2019
+ *      Author: sungjinkim
+ */
+
+#ifndef INC_COMMANDEXECUTE_H_
+#define INC_COMMANDEXECUTE_H_
+
+#include "main.h"
+#include "tim.h"
+#include "usart.h"
+#include "gpio.h"
+
+#define SIZE 20
+#define CLIST 25
+
+commandliststate makepoop(void);
+void commandexecute(uint8_t* rxdata, uint8_t* afterblank);
+void checkstate(uint16_t buffer);
+void Onoff(uint8_t* onoff);
+#endif /* INC_COMMANDEXECUTE_H_ */
+

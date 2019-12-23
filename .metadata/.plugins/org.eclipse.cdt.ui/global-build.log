@@ -1,0 +1,642 @@
+09:56:45 **** Incremental Build of configuration Debug for project GPIO_FAULT ****
+make -j7 all 
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_adc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_cortex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_dma_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_eth.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_exti.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_flash_ramfunc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_gpio.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_pwr_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_rcc_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_tim_ex.o"
+arm-none-eabi-gcc "../Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.d" -MT"Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Drivers/STM32F4xx_HAL_Driver/Src/stm32f4xx_hal_uart.o"
+arm-none-eabi-gcc "../Core/Src/adc.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/adc.d" -MT"Core/Src/adc.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/adc.o"
+arm-none-eabi-gcc "../Core/Src/commandexecute.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/commandexecute.d" -MT"Core/Src/commandexecute.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/commandexecute.o"
+../Core/Src/commandexecute.c:15:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Tempalarm",   "Interlock",   "Enable",    "Fault",    "Band A",
+   ^~~~~~~~~~~
+../Core/Src/commandexecute.c:15:3: note: (near initialization for 'commandlist[0]')
+../Core/Src/commandexecute.c:15:18: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Tempalarm",   "Interlock",   "Enable",    "Fault",    "Band A",
+                  ^~~~~~~~~~~
+../Core/Src/commandexecute.c:15:18: note: (near initialization for 'commandlist[1]')
+../Core/Src/commandexecute.c:15:33: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Tempalarm",   "Interlock",   "Enable",    "Fault",    "Band A",
+                                 ^~~~~~~~
+../Core/Src/commandexecute.c:15:33: note: (near initialization for 'commandlist[2]')
+../Core/Src/commandexecute.c:15:46: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Tempalarm",   "Interlock",   "Enable",    "Fault",    "Band A",
+                                              ^~~~~~~
+../Core/Src/commandexecute.c:15:46: note: (near initialization for 'commandlist[3]')
+../Core/Src/commandexecute.c:15:58: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Tempalarm",   "Interlock",   "Enable",    "Fault",    "Band A",
+                                                          ^~~~~~~~
+../Core/Src/commandexecute.c:15:58: note: (near initialization for 'commandlist[4]')
+../Core/Src/commandexecute.c:16:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Band B",    "Bypass",    "Current0",   "Current1",   "Current2",
+   ^~~~~~~~
+../Core/Src/commandexecute.c:16:3: note: (near initialization for 'commandlist[5]')
+../Core/Src/commandexecute.c:16:16: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Band B",    "Bypass",    "Current0",   "Current1",   "Current2",
+                ^~~~~~~~
+../Core/Src/commandexecute.c:16:16: note: (near initialization for 'commandlist[6]')
+../Core/Src/commandexecute.c:16:29: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Band B",    "Bypass",    "Current0",   "Current1",   "Current2",
+                             ^~~~~~~~~~
+../Core/Src/commandexecute.c:16:29: note: (near initialization for 'commandlist[7]')
+../Core/Src/commandexecute.c:16:43: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Band B",    "Bypass",    "Current0",   "Current1",   "Current2",
+                                           ^~~~~~~~~~
+../Core/Src/commandexecute.c:16:43: note: (near initialization for 'commandlist[8]')
+../Core/Src/commandexecute.c:16:57: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Band B",    "Bypass",    "Current0",   "Current1",   "Current2",
+                                                         ^~~~~~~~~~
+../Core/Src/commandexecute.c:16:57: note: (near initialization for 'commandlist[9]')
+../Core/Src/commandexecute.c:17:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Current3",   "Current4",   "Temp0",    "Temp1",    "Temp2",
+   ^~~~~~~~~~
+../Core/Src/commandexecute.c:17:3: note: (near initialization for 'commandlist[10]')
+../Core/Src/commandexecute.c:17:17: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Current3",   "Current4",   "Temp0",    "Temp1",    "Temp2",
+                 ^~~~~~~~~~
+../Core/Src/commandexecute.c:17:17: note: (near initialization for 'commandlist[11]')
+../Core/Src/commandexecute.c:17:31: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Current3",   "Current4",   "Temp0",    "Temp1",    "Temp2",
+                               ^~~~~~~
+../Core/Src/commandexecute.c:17:31: note: (near initialization for 'commandlist[12]')
+../Core/Src/commandexecute.c:17:43: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Current3",   "Current4",   "Temp0",    "Temp1",    "Temp2",
+                                           ^~~~~~~
+../Core/Src/commandexecute.c:17:43: note: (near initialization for 'commandlist[13]')
+../Core/Src/commandexecute.c:17:55: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Current3",   "Current4",   "Temp0",    "Temp1",    "Temp2",
+                                                       ^~~~~~~
+../Core/Src/commandexecute.c:17:55: note: (near initialization for 'commandlist[14]')
+../Core/Src/commandexecute.c:18:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Voltage0",   "Voltage1",   "Forward0",   "Forward1",   "Reflect0",
+   ^~~~~~~~~~
+../Core/Src/commandexecute.c:18:3: note: (near initialization for 'commandlist[15]')
+../Core/Src/commandexecute.c:18:17: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Voltage0",   "Voltage1",   "Forward0",   "Forward1",   "Reflect0",
+                 ^~~~~~~~~~
+../Core/Src/commandexecute.c:18:17: note: (near initialization for 'commandlist[16]')
+../Core/Src/commandexecute.c:18:31: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Voltage0",   "Voltage1",   "Forward0",   "Forward1",   "Reflect0",
+                               ^~~~~~~~~~
+../Core/Src/commandexecute.c:18:31: note: (near initialization for 'commandlist[17]')
+../Core/Src/commandexecute.c:18:45: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Voltage0",   "Voltage1",   "Forward0",   "Forward1",   "Reflect0",
+                                             ^~~~~~~~~~
+../Core/Src/commandexecute.c:18:45: note: (near initialization for 'commandlist[18]')
+../Core/Src/commandexecute.c:18:59: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Voltage0",   "Voltage1",   "Forward0",   "Forward1",   "Reflect0",
+                                                           ^~~~~~~~~~
+../Core/Src/commandexecute.c:18:59: note: (near initialization for 'commandlist[19]')
+../Core/Src/commandexecute.c:19:3: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Reflect",   "Input0",    "Input1",   "Atten",   "ALC"};
+   ^~~~~~~~~
+../Core/Src/commandexecute.c:19:3: note: (near initialization for 'commandlist[20]')
+../Core/Src/commandexecute.c:19:16: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Reflect",   "Input0",    "Input1",   "Atten",   "ALC"};
+                ^~~~~~~~
+../Core/Src/commandexecute.c:19:16: note: (near initialization for 'commandlist[21]')
+../Core/Src/commandexecute.c:19:29: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Reflect",   "Input0",    "Input1",   "Atten",   "ALC"};
+                             ^~~~~~~~
+../Core/Src/commandexecute.c:19:29: note: (near initialization for 'commandlist[22]')
+../Core/Src/commandexecute.c:19:41: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Reflect",   "Input0",    "Input1",   "Atten",   "ALC"};
+                                         ^~~~~~~
+../Core/Src/commandexecute.c:19:41: note: (near initialization for 'commandlist[23]')
+../Core/Src/commandexecute.c:19:52: warning: pointer targets in initialization differ in signedness [-Wpointer-sign]
+   "Reflect",   "Input0",    "Input1",   "Atten",   "ALC"};
+                                                    ^~~~~
+../Core/Src/commandexecute.c:19:52: note: (near initialization for 'commandlist[24]')
+../Core/Src/commandexecute.c: In function 'comandexecute':
+../Core/Src/commandexecute.c:39:14: warning: pointer targets in passing argument 1 of 'strcasecmp' differ in signedness [-Wpointer-sign]
+   if(strcmpi(rxdata, commandlist[i]) == 0)
+              ^~~~~~
+In file included from /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:24:0,
+                 from ../Core/Inc/main.h:37,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/strings.h:67:6: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int  strcasecmp(const char *, const char *) __pure;
+      ^~~~~~~~~~
+../Core/Src/commandexecute.c:39:22: warning: pointer targets in passing argument 2 of 'strcasecmp' differ in signedness [-Wpointer-sign]
+   if(strcmpi(rxdata, commandlist[i]) == 0)
+                      ^~~~~~~~~~~
+In file included from /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:24:0,
+                 from ../Core/Inc/main.h:37,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/strings.h:67:6: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int  strcasecmp(const char *, const char *) __pure;
+      ^~~~~~~~~~
+../Core/Src/commandexecute.c:74:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+      if((atoi(rxvaldata) == 1) || (atoi(rxvaldata) == 0))
+               ^~~~~~~~~
+In file included from ../Core/Inc/main.h:38:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int atoi (const char *__nptr);
+     ^~~~
+../Core/Src/commandexecute.c:74:41: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+      if((atoi(rxvaldata) == 1) || (atoi(rxvaldata) == 0))
+                                         ^~~~~~~~~
+In file included from ../Core/Inc/main.h:38:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int atoi (const char *__nptr);
+     ^~~~
+../Core/Src/commandexecute.c:76:46: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+       variable[indexforcommandswitch] = atoi(rxvaldata);
+                                              ^~~~~~~~~
+In file included from ../Core/Inc/main.h:38:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int atoi (const char *__nptr);
+     ^~~~
+../Core/Src/commandexecute.c:98:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+      if((atoi(rxvaldata) == 1) || (atoi(rxvaldata) == 0))
+               ^~~~~~~~~
+In file included from ../Core/Inc/main.h:38:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int atoi (const char *__nptr);
+     ^~~~
+../Core/Src/commandexecute.c:98:41: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+      if((atoi(rxvaldata) == 1) || (atoi(rxvaldata) == 0))
+                                         ^~~~~~~~~
+In file included from ../Core/Inc/main.h:38:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int atoi (const char *__nptr);
+     ^~~~
+../Core/Src/commandexecute.c:100:46: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+       variable[indexforcommandswitch] = atoi(rxvaldata);
+                                              ^~~~~~~~~
+In file included from ../Core/Inc/main.h:38:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int atoi (const char *__nptr);
+     ^~~~
+../Core/Src/commandexecute.c:117:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+      if((atoi(rxvaldata) == 1) || (atoi(rxvaldata) == 0))
+               ^~~~~~~~~
+In file included from ../Core/Inc/main.h:38:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int atoi (const char *__nptr);
+     ^~~~
+../Core/Src/commandexecute.c:117:41: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+      if((atoi(rxvaldata) == 1) || (atoi(rxvaldata) == 0))
+                                         ^~~~~~~~~
+In file included from ../Core/Inc/main.h:38:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int atoi (const char *__nptr);
+     ^~~~
+../Core/Src/commandexecute.c:119:46: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+       variable[indexforcommandswitch] = atoi(rxvaldata);
+                                              ^~~~~~~~~
+In file included from ../Core/Inc/main.h:38:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int atoi (const char *__nptr);
+     ^~~~
+../Core/Src/commandexecute.c:136:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+      if((atoi(rxvaldata) == 1) || (atoi(rxvaldata) == 0))
+               ^~~~~~~~~
+In file included from ../Core/Inc/main.h:38:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int atoi (const char *__nptr);
+     ^~~~
+../Core/Src/commandexecute.c:136:41: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+      if((atoi(rxvaldata) == 1) || (atoi(rxvaldata) == 0))
+                                         ^~~~~~~~~
+In file included from ../Core/Inc/main.h:38:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int atoi (const char *__nptr);
+     ^~~~
+../Core/Src/commandexecute.c:138:46: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+       variable[indexforcommandswitch] = atoi(rxvaldata);
+                                              ^~~~~~~~~
+In file included from ../Core/Inc/main.h:38:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int atoi (const char *__nptr);
+     ^~~~
+../Core/Src/commandexecute.c:205:15: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+      if((atoi(rxvaldata) >= 0) && (atoi(rxvaldata) <= 30))
+               ^~~~~~~~~
+In file included from ../Core/Inc/main.h:38:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int atoi (const char *__nptr);
+     ^~~~
+../Core/Src/commandexecute.c:205:41: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+      if((atoi(rxvaldata) >= 0) && (atoi(rxvaldata) <= 30))
+                                         ^~~~~~~~~
+In file included from ../Core/Inc/main.h:38:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int atoi (const char *__nptr);
+     ^~~~
+../Core/Src/commandexecute.c:207:46: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+       variable[indexforcommandswitch] = atoi(rxvaldata);
+                                              ^~~~~~~~~
+In file included from ../Core/Inc/main.h:38:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int atoi (const char *__nptr);
+     ^~~~
+../Core/Src/commandexecute.c:254:45: warning: pointer targets in passing argument 1 of 'atoi' differ in signedness [-Wpointer-sign]
+      variable[indexforcommandswitch] = atoi(rxvaldata);
+                                             ^~~~~~~~~
+In file included from ../Core/Inc/main.h:38:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdlib.h:81:5: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int atoi (const char *__nptr);
+     ^~~~
+../Core/Src/commandexecute.c: In function 'commandstate':
+../Core/Src/commandexecute.c:271:14: warning: pointer targets in passing argument 1 of 'strcasecmp' differ in signedness [-Wpointer-sign]
+   if(strcmpi(rxdata, commandlist[i]) == 0)
+              ^~~~~~
+In file included from /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:24:0,
+                 from ../Core/Inc/main.h:37,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/strings.h:67:6: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int  strcasecmp(const char *, const char *) __pure;
+      ^~~~~~~~~~
+../Core/Src/commandexecute.c:271:22: warning: pointer targets in passing argument 2 of 'strcasecmp' differ in signedness [-Wpointer-sign]
+   if(strcmpi(rxdata, commandlist[i]) == 0)
+                      ^~~~~~~~~~~
+In file included from /Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:24:0,
+                 from ../Core/Inc/main.h:37,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/strings.h:67:6: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int  strcasecmp(const char *, const char *) __pure;
+      ^~~~~~~~~~
+../Core/Src/commandexecute.c:289:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+            ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:36:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int sprintf (char *__restrict, const char *__restrict, ...)
+     ^~~~~~~
+../Core/Src/commandexecute.c:290:51: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:37:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+../Core/Src/commandexecute.c:296:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+            ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:36:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int sprintf (char *__restrict, const char *__restrict, ...)
+     ^~~~~~~
+../Core/Src/commandexecute.c:297:51: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:37:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+../Core/Src/commandexecute.c:304:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+            ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:36:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int sprintf (char *__restrict, const char *__restrict, ...)
+     ^~~~~~~
+../Core/Src/commandexecute.c:305:51: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:37:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+../Core/Src/commandexecute.c:312:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+            ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:36:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int sprintf (char *__restrict, const char *__restrict, ...)
+     ^~~~~~~
+../Core/Src/commandexecute.c:313:51: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:37:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+../Core/Src/commandexecute.c:319:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+            ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:36:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int sprintf (char *__restrict, const char *__restrict, ...)
+     ^~~~~~~
+../Core/Src/commandexecute.c:320:51: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:37:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+../Core/Src/commandexecute.c:326:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+            ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:36:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int sprintf (char *__restrict, const char *__restrict, ...)
+     ^~~~~~~
+../Core/Src/commandexecute.c:327:51: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:37:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+../Core/Src/commandexecute.c:333:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+            ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:36:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int sprintf (char *__restrict, const char *__restrict, ...)
+     ^~~~~~~
+../Core/Src/commandexecute.c:334:51: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:37:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+../Core/Src/commandexecute.c:340:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+            ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:36:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int sprintf (char *__restrict, const char *__restrict, ...)
+     ^~~~~~~
+../Core/Src/commandexecute.c:341:51: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:37:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+../Core/Src/commandexecute.c:347:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+            ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:36:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int sprintf (char *__restrict, const char *__restrict, ...)
+     ^~~~~~~
+../Core/Src/commandexecute.c:348:51: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:37:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+../Core/Src/commandexecute.c:354:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+            ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:36:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int sprintf (char *__restrict, const char *__restrict, ...)
+     ^~~~~~~
+../Core/Src/commandexecute.c:355:51: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:37:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+../Core/Src/commandexecute.c:361:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+            ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:36:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int sprintf (char *__restrict, const char *__restrict, ...)
+     ^~~~~~~
+../Core/Src/commandexecute.c:362:51: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:37:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+../Core/Src/commandexecute.c:368:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+            ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:36:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int sprintf (char *__restrict, const char *__restrict, ...)
+     ^~~~~~~
+../Core/Src/commandexecute.c:369:51: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:37:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+../Core/Src/commandexecute.c:375:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+            ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:36:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int sprintf (char *__restrict, const char *__restrict, ...)
+     ^~~~~~~
+../Core/Src/commandexecute.c:376:51: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:37:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+../Core/Src/commandexecute.c:382:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+            ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:36:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int sprintf (char *__restrict, const char *__restrict, ...)
+     ^~~~~~~
+../Core/Src/commandexecute.c:383:51: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:37:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+../Core/Src/commandexecute.c:389:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+            ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:36:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int sprintf (char *__restrict, const char *__restrict, ...)
+     ^~~~~~~
+../Core/Src/commandexecute.c:390:51: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:37:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+../Core/Src/commandexecute.c:396:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+            ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:36:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int sprintf (char *__restrict, const char *__restrict, ...)
+     ^~~~~~~
+../Core/Src/commandexecute.c:397:51: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:37:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+../Core/Src/commandexecute.c:401:12: warning: pointer targets in passing argument 1 of 'sprintf' differ in signedness [-Wpointer-sign]
+    sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+            ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:36:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/stdio.h:244:5: note: expected 'char * restrict' but argument is of type 'uint8_t * {aka unsigned char *}'
+ int sprintf (char *__restrict, const char *__restrict, ...)
+     ^~~~~~~
+../Core/Src/commandexecute.c:402:51: warning: pointer targets in passing argument 1 of 'strlen' differ in signedness [-Wpointer-sign]
+    HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+                                                   ^~~~~~~~~~~
+In file included from ../Core/Inc/main.h:37:0,
+                 from ../Core/Inc/commandexecute.h:11,
+                 from ../Core/Src/commandexecute.c:9:
+/Applications/STM32CubeIDE.app/Contents/Eclipse/plugins/com.st.stm32cube.ide.mcu.externaltools.gnu-tools-for-stm32.7-2018-q2-update.macos64_1.0.0.201904181610/tools/arm-none-eabi/include/string.h:41:9: note: expected 'const char *' but argument is of type 'uint8_t * {aka unsigned char *}'
+ size_t  strlen (const char *);
+         ^~~~~~
+arm-none-eabi-gcc "../Core/Src/eth.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/eth.d" -MT"Core/Src/eth.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/eth.o"
+arm-none-eabi-gcc "../Core/Src/gpio.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/gpio.d" -MT"Core/Src/gpio.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/gpio.o"
+arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/main.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_hal_msp.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_hal_msp.d" -MT"Core/Src/stm32f4xx_hal_msp.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_hal_msp.o"
+arm-none-eabi-gcc "../Core/Src/stm32f4xx_it.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/stm32f4xx_it.d" -MT"Core/Src/stm32f4xx_it.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/stm32f4xx_it.o"
+arm-none-eabi-gcc "../Core/Src/sys.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/sys.d" -MT"Core/Src/sys.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/sys.o"
+arm-none-eabi-gcc "../Core/Src/system_stm32f4xx.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/system_stm32f4xx.d" -MT"Core/Src/system_stm32f4xx.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/system_stm32f4xx.o"
+arm-none-eabi-gcc "../Core/Src/tim.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/tim.d" -MT"Core/Src/tim.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/tim.o"
+arm-none-eabi-gcc "../Core/Src/usart.c" -mcpu=cortex-m4 -std=gnu11 -g3 -DUSE_HAL_DRIVER -DDEBUG -DSTM32F429xx -c -I../Drivers/CMSIS/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc -I../Core/Inc -I../Drivers/CMSIS/Device/ST/STM32F4xx/Include -I../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -MMD -MP -MF"Core/Src/usart.d" -MT"Core/Src/usart.o" --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -o "Core/Src/usart.o"
+arm-none-eabi-gcc -o "GPIO_FAULT.elf" @"objects.list"   -mcpu=cortex-m4 -T"/Users/sungjinkim/stm32workspace00/GPIO_FAULT/STM32F429ZITX_FLASH.ld" --specs=nosys.specs -Wl,-Map="GPIO_FAULT.map" -Wl,--gc-sections -static --specs=nano.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: GPIO_FAULT.elf
+ 
+arm-none-eabi-objdump -h -S  GPIO_FAULT.elf  > "GPIO_FAULT.list"
+arm-none-eabi-size   GPIO_FAULT.elf 
+   text	   data	    bss	    dec	    hex	filename
+  24784	    732	   2364	  27880	   6ce8	GPIO_FAULT.elf
+Finished building: default.size.stdout
+ 
+Finished building: GPIO_FAULT.list
+ 
+09:56:49 **** Incremental Build of configuration Debug for project GPIO_FAULT ****
+make -j7 all 
+arm-none-eabi-size   GPIO_FAULT.elf 
+   text	   data	    bss	    dec	    hex	filename
+  24784	    732	   2364	  27880	   6ce8	GPIO_FAULT.elf
+Finished building: default.size.stdout
+ 

@@ -1,0 +1,48 @@
+/*
+ * commandexecute.h
+ *
+ *  Created on: Dec 10, 2019
+ *      Author: sungjinkim
+ */
+
+#ifndef INC_COMMANDEXECUTE_H_
+#define INC_COMMANDEXECUTE_H_
+
+#include "main.h"
+#include "tim.h"
+#include "usart.h"
+#include "gpio.h"
+
+#define SIZE 20
+#define CLIST 25
+
+#define TEMPALARM	0
+#define INTERLOCK	1
+#define ENABLE		2
+#define FAULT		3
+#define BANDA		4
+#define BANDB		5
+#define BYPASS		6
+#define CURRENT0	7
+#define CURRENT1	8
+#define CURRENT2	9
+#define CURRENT3	10
+#define CURRENT4	11
+#define TEMP0		12
+#define TEMP1		13
+#define TEMP2		14
+#define VOLTAGE0	15
+#define VOLTAGE1	16
+#define ATTEN		17
+#define FORWARD0	18
+#define FORWARD1	19
+#define REFLECT0	20
+#define REFLECT1	21
+#define INPUT0		22
+#define INPUT1		23
+#define SETALC		24
+
+void commandexecute(uint8_t** commandbuffer, uint8_t** valuebuffer);
+void clearbuffer(void);
+#endif /* INC_COMMANDEXECUTE_H_ */
+

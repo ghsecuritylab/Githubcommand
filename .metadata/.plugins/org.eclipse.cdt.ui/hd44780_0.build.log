@@ -1,0 +1,10 @@
+20:49:56 **** Incremental Build of configuration Debug for project hd44780_0 ****
+make -j7 all 
+arm-none-eabi-size   hd44780_0.elf 
+   text	   data	    bss	    dec	    hex	filename
+  17880	     24	   1904	  19808	   4d60	hd44780_0.elf
+Finished building: default.size.stdout
+ 
+
+20:49:56 Build Finished. 0 errors, 0 warnings. (took 105ms)
+

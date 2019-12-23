@@ -1,0 +1,4 @@
+1574668726972	Delete resource 'LCD/Core/Inc/define.h'
+1574669068085	Delete resource 'LCD/Core/Inc/tm_stm32_hd44780.h'
+1574669073997	Delete resource 'LCD/Core/Src/tm_stm32_hd44780.c'
+1574669088610	Delete resource 'LCD/Core/Inc/stm32fxxx_hal.h'

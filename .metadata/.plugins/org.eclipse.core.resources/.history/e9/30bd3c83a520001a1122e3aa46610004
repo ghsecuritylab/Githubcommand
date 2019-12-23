@@ -1,0 +1,203 @@
+/*
+ * commandexecute.c
+ *
+ *  Created on: Dec 10, 2019
+ *      Author: sungjinkim
+ */
+
+
+#include "commandexecute.h"
+
+/* poop 초기상태 */
+uint8_t key[] = "The keyword";
+uint8_t opt[] = " is operated value with";
+uint8_t stt[] = "'s state is";
+uint8_t onn[] = " 1";
+uint8_t off[] = " 0";
+uint8_t ent[] = "\r\n";
+uint8_t faultison[] = "Now fault is running your command will be rejected\r\nDo again after clearing fault state\r\n";
+uint8_t attenover[] = "The value must be in 0 ~ 30";
+
+uint16_t exist = 0;
+uint8_t ivalid[] = "Invalid command is typed";
+uint8_t noonoff[] = "\r\nThis command has no ? state";
+uint8_t nooper[] = "\r\nThis command has no operation\r\n";
+uint8_t display[100];
+
+uint8_t nomatch[] = "nomatch";
+
+uint8_t* commandlist[]
+		= {
+		"Tempalarm", 		"Interlock", 		"Enable", 			"Fault", 			"Band A",
+		"Band B", 			"Bypass", 			"Current0", 		"Currnet1", 		"Current2",
+		"Current3", 		"Current4", 		"Temp0", 			"Temp1", 			"Temp 2",
+		"Voltage0", 		"Voltage1", 		"AttenControl", 	"ForwardDetect0", 	"ForwardDetect1",
+		"ReflectDetect0", 	"ReflectDetect1",	"InputDetect0", 	"InputDetect1",		"SetALC"};
+
+extern uint16_t variable[CLIST];
+
+
+void comandexecute(uint8_t* rxdata, uint8_t* rxvaldata) {
+
+}
+void commandstate(uint8_t* rxdata) {
+	int index = 0;
+	uint8_t printbuffer[SIZE];
+	for(int i = 0; i < CLIST; i++) {
+		if(strcmpi(rxdata, cmdlist[i]) == 0) {
+			sprintf(printbuffer, "%d", variable[i]);
+		}
+	}
+}
+//
+//void commandexecute(uint8_t* commandbuffer, uint8_t* valuebuffer) {
+//	if(*valuebuffer == '?') {
+//		uint16_t exist = 0;
+//
+//		/* 명령어가 리스트상에서 존재하는것을 체크한다. */
+//		for(int i = 0; i < CLIST; i++) {
+//			if(strcmpi(commandbuffer, commandlist[i]) == 0) {
+//				exist = i;
+//				HAL_UART_Transmit(&huart1, commandbuffer, strlen(commandbuffer), 0xFFFF);
+//
+//			}
+//		}
+//
+//		/* ? 명령어 체크 */
+//		if(exist != CLIST) {
+//			HAL_UART_Transmit(&huart1, commandlist[exist], strlen(commandlist[exist]), 0xFFFF);
+//			HAL_UART_Transmit(&huart1, stt, strlen(stt), 0xFFFF);
+//			/* on */
+//			if(variable[exist] == 1) {
+//				HAL_UART_Transmit(&huart1, *commandbuffer, sizeof(*commandbuffer), 0xFFFF);
+//				HAL_UART_Transmit(&huart1, onn, sizeof(onn), 0xFFFF);
+//				HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//			}
+//			/* off */
+//			else if(variable[exist] == 0) {
+//				HAL_UART_Transmit(&huart1, *commandbuffer, sizeof(*commandbuffer), 0xFFFF);
+//				HAL_UART_Transmit(&huart1, off, sizeof(off), 0xFFFF);
+//				HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//			}
+//			/* no on off */
+//			else {
+//				HAL_UART_Transmit(&huart1, commandbuffer[commandbufferstack], sizeof(commandbuffer[commandbufferstack]), 0xFFFF);
+//				HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//			}
+//			exist = 0;
+//		}
+//		/* 명령어가 리스트상에서 존재하지 않는다. */
+//		else {
+//			HAL_UART_Transmit(&huart1, ivalid, sizeof(ivalid), 0xFFFF);
+//			exist = 0;
+//		}
+//	}
+//	/* ?명령어가 아닌 경우 */
+//	else {
+//		for(int i = 0; i < strlen(commandlist); i++) {
+//					if(!strcmpi(commandbuffer[commandbufferstack], commandlist[i])) {
+//						exist = i;
+//					}
+//				}
+//		/* 정상 동작하면 OK를 return하는 함수가 필요한듯 */
+//		switch(exist) {
+//			case ENABLE:{
+//				uint16_t buffer = atoi(valuebuffer[commandbufferstack]);
+//				if(variable[3] == 1) {
+//					HAL_UART_Transmit(&huart1, faultison, strlen(faultison), 0xFFFF);
+//				}
+//				else if((buffer == 1) || (buffer == 0)) {
+//					variable[ENABLE] = buffer;
+//					HAL_UART_Transmit(&huart1, commandlist[exist], strlen(commandlist[exist]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, opt, strlen(opt), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, valuebuffer[commandbufferstack], strlen(valuebuffer[commandbufferstack]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//				}
+//				buffer = 0;
+//				break;
+//			}
+//			case BANDA:{
+//				uint16_t buffer = atoi(valuebuffer[commandbufferstack]);
+//				if(variable[3] == 1) {
+//					HAL_UART_Transmit(&huart1, faultison, strlen(faultison), 0xFFFF);
+//				}
+//				else if((buffer == 1) || (buffer == 0)) {
+//					variable[BANDA] = buffer;
+//					HAL_UART_Transmit(&huart1, commandlist[exist], strlen(commandlist[exist]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, opt, strlen(opt), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, valuebuffer[commandbufferstack], strlen(valuebuffer[commandbufferstack]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//				}
+//				buffer = 0;
+//				break;
+//			}
+//			case BANDB:{
+//				uint16_t buffer = atoi(valuebuffer[commandbufferstack]);
+//				if(variable[3] == 1) {
+//					HAL_UART_Transmit(&huart1, faultison, strlen(faultison), 0xFFFF);
+//				}
+//				else if((buffer == 1) || (buffer == 0)) {
+//					variable[BANDB] = buffer;
+//					HAL_UART_Transmit(&huart1, commandlist[exist], strlen(commandlist[exist]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, opt, strlen(opt), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, valuebuffer[commandbufferstack], strlen(valuebuffer[commandbufferstack]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//				}
+//				buffer = 0;
+//				break;
+//			}
+//			case BYPASS:{
+//				uint16_t buffer = atoi(valuebuffer[commandbufferstack]);
+//				if(variable[3] == 1) {
+//					HAL_UART_Transmit(&huart1, faultison, strlen(faultison), 0xFFFF);
+//				}
+//				else if((buffer == 1) || (buffer == 0)) {
+//					variable[BYPASS] = buffer;
+//					HAL_UART_Transmit(&huart1, commandlist[exist], strlen(commandlist[exist]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, opt, strlen(opt), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, valuebuffer[commandbufferstack], strlen(valuebuffer[commandbufferstack]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//				}
+//				buffer = 0;
+//				break;
+//			}
+//			case ATTEN:{
+//				uint16_t buffer = atoi(valuebuffer[commandbufferstack]);
+//				if(variable[3] == 1) {
+//					HAL_UART_Transmit(&huart1, faultison, strlen(faultison), 0xFFFF);
+//				}
+//				else if((buffer < 0) || (buffer > 30)) {
+//					HAL_UART_Transmit(&huart1, attenover, strlen(attenover), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//				}
+//				else {
+//					variable[ATTEN] = buffer;
+//					HAL_UART_Transmit(&huart1, commandlist[exist], strlen(commandlist[exist]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, opt, strlen(opt), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, valuebuffer[commandbufferstack], strlen(valuebuffer[commandbufferstack]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//				}
+//				buffer = 0;
+//				break;
+//			}
+//			case SETALC:{
+//				uint16_t buffer = atoi(valuebuffer[commandbufferstack]);
+//				if(variable[3] == 1) {
+//					HAL_UART_Transmit(&huart1, faultison, strlen(faultison), 0xFFFF);
+//				}
+//				else {
+//					variable[SETALC] = buffer;
+//					HAL_UART_Transmit(&huart1, commandlist[exist], strlen(commandlist[exist]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, opt, strlen(opt), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, valuebuffer[commandbufferstack], strlen(valuebuffer[commandbufferstack]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//				}
+//				buffer = 0;
+//				break;
+//			}
+//			default: {
+//				HAL_UART_Transmit(&huart1, nooper, sizeof(nooper), 0xFFFF);
+//			}
+//		}
+//	}
+//}

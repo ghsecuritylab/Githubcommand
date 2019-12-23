@@ -1,0 +1,10 @@
+14:33:01 **** Incremental Build of configuration Debug for project faultcheck ****
+make -j7 all 
+arm-none-eabi-size   faultcheck.elf 
+   text	   data	    bss	    dec	    hex	filename
+   5620	     20	   1572	   7212	   1c2c	faultcheck.elf
+Finished building: default.size.stdout
+ 
+
+14:33:01 Build Finished. 0 errors, 0 warnings. (took 108ms)
+
