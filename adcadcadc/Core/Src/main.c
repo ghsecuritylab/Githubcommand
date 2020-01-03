@@ -28,6 +28,7 @@
 #include "tim.h"
 #include "usart.h"
 #include "gpio.h"
+#include "commandexecute.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -36,6 +37,32 @@
 
 /* Private typedef -----------------------------------------------------------*/
 /* USER CODE BEGIN PTD */
+
+/* status 및 int 자료형 변수 리스트 */
+#define COMBUFFER 24
+
+#define VARLIST 2
+
+#define TEMPALARM 0
+#define INTERLOCK 1
+
+
+/*  */
+#define ADC1_CURRENT0  0
+#define ADC1_CURRENT1  1
+#define ADC1_CURRENT2  2
+#define ADC1_CURRENT3  3
+#define ADC1_CURRENT4  4
+#define ADC1_VOLTAGE0  5
+#define ADC1_VOLTAGE1  6
+
+/*  */
+#define ADC3_INPUT	   0
+#define ADC3_TEMP	   1
+#define ADC3_FORWARD0  2
+#define ADC3_FORWARD1  3
+#define ADC3_REFLECT0  4
+#define ADC3_REFLECT1  5
 
 /* USER CODE END PTD */
 
@@ -52,6 +79,30 @@
 
 /* USER CODE BEGIN PV */
 
+/* status 및 int 자료형 변수 리스트 */
+uint16_t variable[VARLIST];
+uint16_t exti;
+
+uint16_t modecommand = 0;
+uint8_t rxdata[SJKIM_SIZE];
+uint16_t front = 0;
+
+uint8_t noexist[] = "Not match command in commandlist\r\n";
+uint8_t txbuffer[] = "'command mode on' \r\n'This message is comming from board'\r\n";
+uint8_t backspace[] = "\b";
+uint8_t blank[] = " ";
+uint8_t enter[] = "\r\n";
+uint8_t rxvaldata[COMBUFFER];
+uint8_t* commandbuffer[COMBUFFER];
+uint16_t commandbufferstack;
+uint16_t englishinputerror;
+
+uint16_t adc1[ADC1NUM];
+uint16_t adc3[ADC3NUM];
+
+
+uint16_t timer2, timer13;
+uint16_t buffertimer2;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -62,11 +113,8 @@ void SystemClock_Config(void);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
-uint16_t adc1[7];
-uint16_t adc3[6];
 
 
-uint16_t timer;
 /* USER CODE END 0 */
 
 /**
@@ -106,11 +154,14 @@ int main(void)
   MX_ADC3_Init();
   MX_DAC_Init();
   MX_SPI1_Init();
+  MX_TIM7_Init();
+  MX_TIM13_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim2);
+  HAL_TIM_Base_Start_IT(&htim13);
   HAL_ADC_Start_DMA(&hadc1, adc1, 7);
   HAL_ADC_Start_DMA(&hadc3, adc3, 6);
-
+  HAL_UART_Receive_IT(&huart1, &rxdata[front], 1);
 
   /* USER CODE END 2 */
 
@@ -171,9 +222,153 @@ void SystemClock_Config(void)
 /* USER CODE BEGIN 4 */
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
 {
-	timer++;
+	if(htim->Instance == htim13.Instance)
+	    {
+			timer13++;
+			int blankwhere = 0;
+			uint16_t length = strlen((const char*)rxdata);
+			uint16_t blankexistpara = 0;
+			/*
+			 * search blank
+			 * */
+			for(int i = 0; i < length; i++)
+			{
+				if(rxdata[i] == ' ')
+				{
+					blankexistpara = 1;
+					blankwhere = i;
+					i = length;
+				}
+			}
+			/* check and transfer command */
+			if(blankexistpara == 1)
+			{
+				blankexistpara = 0;
+				rxdata[blankwhere] = '\0';
+				for(int i = blankwhere; i < length; i++)
+				{
+					rxvaldata[i - blankwhere] = rxdata[i + 1];
+					rxdata[i + 1] = '\0';
+				}
+				comandexecute(rxdata, rxvaldata);
+			}
+			/* ? command transfer */
+			else if(rxdata[length - 1] == '?')
+			{
+				rxdata[length - 1] = '\0';
+				commandstate(rxdata);
+			}
+			modecommand = 0;
+			HAL_TIM_Base_Stop_IT(&htim13);
+	    }
 }
 
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	exti++;
+
+	switch(GPIO_Pin)
+	{
+		case Tempalarm_Pin:
+		{
+			if(HAL_GPIO_ReadPin(GPIOE, GPIO_Pin) == GPIO_PIN_SET)
+			{
+				variable[TEMPALARM] = 1;
+//				if(buffertimer2[exti] == buffertimer2[exti - 1])
+//				{
+//					buffertimer2[exti] = timer2;
+//					exti++;
+//					variable[TEMPALARM] = 1;
+//				}
+			}
+			else
+			{
+				variable[TEMPALARM] = 0;
+			}
+			break;
+		}
+		case Interlock_Pin:
+		{
+			if(HAL_GPIO_ReadPin(GPIOE, GPIO_Pin))
+			{
+				variable[INTERLOCK] = 1;
+			}
+			else
+			{
+				variable[INTERLOCK] = 0;
+			}
+			break;
+		}
+		default:
+		{
+			break;
+		}
+	}
+}
+
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
+{
+	if(huart->Instance == huart1.Instance)
+	{
+		switch(rxdata[front])
+		{
+			/* 엔터 */
+			case '\r':
+				HAL_UART_Transmit(&huart1, enter, sizeof(enter), 0xFFFF);
+				if(modecommand != 0)
+				{
+					rxdata[front] = '\0';
+					HAL_TIM_Base_Start_IT(&htim13);
+				}
+				front = ((front + 1) % (SJKIM_SIZE-1));
+				HAL_UART_Receive_IT(&huart1, &rxdata[front], 1);
+				break;
+			/* 입력모드 :입력시 modecommand->1 */
+			case ':':
+				if(modecommand == 0)
+				{
+					front = 0;
+					modecommand = 1;
+					for(int i = 0; i < sizeof(rxdata); i++)
+					{
+						rxdata[i] = '\0';
+						rxvaldata[i] = '\0';
+					}
+					HAL_UART_Transmit(&huart1, enter, sizeof(enter), 0xFFFF);
+					HAL_UART_Transmit(&huart1, txbuffer, sizeof(txbuffer), 0xFFFF);
+					HAL_UART_Receive_IT(&huart1, &rxdata[front], 1);
+				}
+			/* 이미 modecommand = 1인 상황에서 :입력을 받았을 때 처리해주기 위한 코드 */
+				else {
+					HAL_UART_Transmit(&huart1, &rxdata[front], 1, 0xFFFF);
+					front = ((front + 1) % (SJKIM_SIZE-1));
+					HAL_UART_Receive_IT(&huart1, &rxdata[front], 1);
+				}
+				break;
+			/* 백 스페이스 */
+			case '\177':
+				rxdata[front] = '\0';
+				if(front != 0) {
+					front = ((front - 1) % (SJKIM_SIZE-1));
+				}
+				else if(front == 0){
+					front= SJKIM_SIZE-1;
+				}
+				HAL_UART_Transmit(&huart1, backspace, 1, 0xFFFF);
+				HAL_UART_Transmit(&huart1, blank, 1, 0xFFFF);
+				HAL_UART_Transmit(&huart1, backspace, 1, 0xFFFF);
+				HAL_UART_Receive_IT(&huart1, &rxdata[front], 1);
+				break;
+			default:
+				HAL_UART_Transmit(&huart1, &rxdata[front], 1, 0xFFFF);
+				/* modecommand on일시 처리 */
+				front = ((front + 1) % (SJKIM_SIZE-1));
+				HAL_UART_Receive_IT(&huart1, &rxdata[front], 1);
+			break;
+		}
+	}
+}
 /* USER CODE END 4 */
 
 /**

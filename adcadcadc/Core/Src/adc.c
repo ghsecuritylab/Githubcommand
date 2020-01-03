@@ -268,7 +268,7 @@ void HAL_ADC_MspInit(ADC_HandleTypeDef* adcHandle)
     PF8     ------> ADC3_IN6
     PF9     ------> ADC3_IN7 
     */
-    GPIO_InitStruct.Pin = Input0_Pin|Temp_Pin|Forward0_Pin|Forward1_Pin 
+    GPIO_InitStruct.Pin = Input_Pin|Temp_Pin|Forward0_Pin|Forward1_Pin 
                           |Reflect0_Pin|Reflect1_Pin;
     GPIO_InitStruct.Mode = GPIO_MODE_ANALOG;
     GPIO_InitStruct.Pull = GPIO_NOPULL;
@@ -347,7 +347,7 @@ void HAL_ADC_MspDeInit(ADC_HandleTypeDef* adcHandle)
     PF8     ------> ADC3_IN6
     PF9     ------> ADC3_IN7 
     */
-    HAL_GPIO_DeInit(GPIOF, Input0_Pin|Temp_Pin|Forward0_Pin|Forward1_Pin 
+    HAL_GPIO_DeInit(GPIOF, Input_Pin|Temp_Pin|Forward0_Pin|Forward1_Pin 
                           |Reflect0_Pin|Reflect1_Pin);
 
     /* ADC3 DMA DeInit */

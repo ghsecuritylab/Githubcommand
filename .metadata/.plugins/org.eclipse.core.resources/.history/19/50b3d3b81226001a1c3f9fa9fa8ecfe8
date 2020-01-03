@@ -1,0 +1,564 @@
+/*
+ * commandexecute.c
+ *
+ *  Created on: Dec 10, 2019
+ *      Author: sungjinkim
+ */
+
+
+#include "commandexecute.h"
+#include "adc.h"
+
+/* poop 초기상태 */
+uint8_t* commandlist[CLIST]
+		= {
+		"Tempalarm", 		"Interlock", 		"Enable", 			"Fault", 			"Band A",
+		"Band B", 			"Bypass", 			"Current0", 		"Current1", 		"Current2",
+		"Current3", 		"Current4", 		"Temp0", 			"Temp1", 			"Temp2",
+		"Voltage0", 		"Voltage1", 		"Forward0", 		"Forward1",			"Reflect0",
+		"Reflect1",			"Input0", 			"Input1",			"Atten",			"ALC"};
+/* commandlist는 define과 index를 맞추도록 한다. */
+
+extern uint16_t variable[CLIST];
+extern uint16_t adc1[ADC1NUM];
+extern uint16_t adc3[ADC3NUM];
+uint16_t indexforcommandswitch = 0;
+uint16_t matchforcommandswitch = 0;
+uint8_t commanddeniedbfault[] = "Fault is on the command is denied";
+uint8_t checkagain[] = "Please check input again";
+uint8_t nomatch[] = "No match";
+/* execute command ex) 0, 1, var
+ *
+ * not for ?
+ * */
+
+void comandexecute(uint8_t* rxdata, uint8_t* rxvaldata)
+{
+	for(int i = 0; i < CLIST; i++)
+	{
+		if(strcmpi(rxdata, commandlist[i]) == 0)
+		{
+			indexforcommandswitch = i;
+			matchforcommandswitch = 1;
+			i = CLIST;
+		}
+		else
+		{
+			matchforcommandswitch = 0;
+		}
+	}
+	/* switch for command */
+	if(matchforcommandswitch == 1)
+	{
+		matchforcommandswitch = 0;
+		switch(indexforcommandswitch)
+		{
+			case TEMPALARM:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case INTERLOCK:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case SJKIM_ENABLE:
+			{
+				if(variable[FAULT] == 1)
+				{
+					HAL_UART_Transmit(&huart1, commanddeniedbfault, sizeof(commanddeniedbfault), 0xFFFF);
+				}
+				else
+				{
+					if((atoi(rxvaldata) == 1) || (atoi(rxvaldata) == 0))
+					{
+						variable[indexforcommandswitch] = atoi(rxvaldata);
+					}
+					else
+					{
+						HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+					}
+				}
+				break;
+			}
+			case FAULT:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case BANDA:
+			{
+				if(variable[FAULT] == 1)
+				{
+					HAL_UART_Transmit(&huart1, commanddeniedbfault, sizeof(commanddeniedbfault), 0xFFFF);
+				}
+				else
+				{
+					if((atoi(rxvaldata) == 1))
+					{
+						variable[indexforcommandswitch] = atoi(rxvaldata);
+						HAL_GPIO_WritePin(GPIOG, BandA, GPIO_PIN_SET);
+					}
+					else if((atoi(rxvaldata) == 0))
+					{
+						variable[indexforcommandswitch] = atoi(rxvaldata);
+						HAL_GPIO_WritePin(GPIOG, BandA, GPIO_PIN_RESET);
+					}
+					else
+					{
+						HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+					}
+				}
+				break;
+			}
+			case BANDB:
+			{
+				if(variable[FAULT] == 1)
+				{
+					HAL_UART_Transmit(&huart1, commanddeniedbfault, sizeof(commanddeniedbfault), 0xFFFF);
+				}
+				else
+				{
+					if((atoi(rxvaldata) == 1) || (atoi(rxvaldata) == 0))
+					{
+						variable[indexforcommandswitch] = atoi(rxvaldata);
+					}
+					else
+					{
+						HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+					}
+				}
+				break;
+			}
+			case BYPASS:
+			{
+				if(variable[FAULT] == 1)
+				{
+					HAL_UART_Transmit(&huart1, commanddeniedbfault, sizeof(commanddeniedbfault), 0xFFFF);
+				}
+				else
+				{
+					if((atoi(rxvaldata) == 1) || (atoi(rxvaldata) == 0))
+					{
+						variable[indexforcommandswitch] = atoi(rxvaldata);
+					}
+					else
+					{
+						HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+					}
+				}
+				break;
+			}
+			case CURRENT0:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case CURRENT1:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case CURRENT2:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case CURRENT3:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case CURRENT4:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case TEMP0:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case TEMP1:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case TEMP2:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case VOLTAGE0:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case VOLTAGE1:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case ATTEN:
+			{
+				if(variable[FAULT] == 1)
+				{
+					HAL_UART_Transmit(&huart1, commanddeniedbfault, sizeof(commanddeniedbfault), 0xFFFF);
+				}
+				else
+				{
+					if((atoi(rxvaldata) >= 0) && (atoi(rxvaldata) <= 30))
+					{
+						variable[indexforcommandswitch] = atoi(rxvaldata);
+					}
+					else
+					{
+						HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+					}
+				}
+				break;
+			}
+			case FORWARD0:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case FORWARD1:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case REFLECT0:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case REFLECT1:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case INPUT0:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case INPUT1:
+			{
+				HAL_UART_Transmit(&huart1, checkagain, sizeof(checkagain), 0xFFFF);
+				break;
+			}
+			case SETALC:
+			{
+				if(variable[FAULT] == 1)
+				{
+					HAL_UART_Transmit(&huart1, commanddeniedbfault, sizeof(commanddeniedbfault), 0xFFFF);
+				}
+				else
+				{
+					variable[indexforcommandswitch] = atoi(rxvaldata);
+				}
+				break;
+			}
+		}
+	}
+	else
+	{
+		HAL_UART_Transmit(&huart1, nomatch, sizeof(nomatch), 0xFFFF);
+	}
+}
+/* command for check state, ex) ? command */
+void commandstate(uint8_t* rxdata)
+{
+	uint8_t printbuffer[SIZE];
+	for(int i = 0; i < CLIST; i++)
+	{
+		if(strcmpi(rxdata, commandlist[i]) == 0)
+		{
+			indexforcommandswitch = i;
+			matchforcommandswitch = 1;
+			i = CLIST;
+		}
+		else
+		{
+			matchforcommandswitch = 0;
+		}
+	}
+	if(matchforcommandswitch == 1)
+	{
+		switch(indexforcommandswitch)
+		{
+		case CURRENT0:
+		{
+			variable[indexforcommandswitch] = adc3[0];
+			sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+			HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+		}
+			break;
+		case CURRENT1:
+		{
+			variable[indexforcommandswitch] = adc3[1];
+			sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+			HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+
+		}
+			break;
+		case CURRENT2:
+		{
+			variable[indexforcommandswitch] = adc3[2];
+			sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+			HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+
+		}
+			break;
+		case CURRENT3:
+		{
+			variable[indexforcommandswitch] = adc3[3];
+			sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+			HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+		}
+			break;
+		case CURRENT4:
+		{
+			variable[indexforcommandswitch] = adc3[4];
+			sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+			HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+		}
+			break;
+		case TEMP0:
+		{
+			variable[indexforcommandswitch] = adc3[5];
+			sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+			HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+		}
+			break;
+		case TEMP1:
+		{
+			variable[indexforcommandswitch] = adc3[6];
+			sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+			HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+		}
+			break;
+		case TEMP2:
+		{
+			variable[indexforcommandswitch] = adc3[7];
+			sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+			HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+		}
+			break;
+		case VOLTAGE0:
+		{
+			variable[indexforcommandswitch] = adc3[8];
+			sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+			HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+		}
+			break;
+		case VOLTAGE1:
+		{
+			variable[indexforcommandswitch] = adc3[9];
+			sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+			HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+		}
+			break;
+		case FORWARD0:
+		{
+			variable[indexforcommandswitch] = adc3[10];
+			sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+			HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+		}
+			break;
+		case FORWARD1:
+		{
+			variable[indexforcommandswitch] = adc3[11];
+			sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+			HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+		}
+			break;
+		case REFLECT0:
+		{
+			variable[indexforcommandswitch] = adc3[12];
+			sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+			HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+		}
+			break;
+		case REFLECT1:
+		{
+			variable[indexforcommandswitch] = adc3[13];
+			sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+			HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+		}
+			break;
+		case INPUT0:
+		{
+			variable[indexforcommandswitch] = adc3[14];
+			sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+			HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+		}
+			break;
+		case INPUT1:
+		{
+			variable[indexforcommandswitch] = adc3[15];
+			sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+			HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+		}
+			break;
+		default:
+			sprintf(printbuffer, "%d", variable[indexforcommandswitch]);
+			HAL_UART_Transmit(&huart1, printbuffer, strlen(printbuffer), 0xFFFF);
+			break;
+		}
+	}
+}
+//
+//void commandexecute(uint8_t* commandbuffer, uint8_t* valuebuffer) {
+//	if(*valuebuffer == '?') {
+//		uint16_t exist = 0;
+//
+//		/* 명령어가 리스트상에서 존재하는것을 체크한다. */
+//		for(int i = 0; i < CLIST; i++) {
+//			if(strcmpi(commandbuffer, commandlist[i]) == 0) {
+//				exist = i;
+//				HAL_UART_Transmit(&huart1, commandbuffer, strlen(commandbuffer), 0xFFFF);
+//
+//			}
+//		}
+//
+//		/* ? 명령어 체크 */
+//		if(exist != CLIST) {
+//			HAL_UART_Transmit(&huart1, commandlist[exist], strlen(commandlist[exist]), 0xFFFF);
+//			HAL_UART_Transmit(&huart1, stt, strlen(stt), 0xFFFF);
+//			/* on */
+//			if(variable[exist] == 1) {
+//				HAL_UART_Transmit(&huart1, *commandbuffer, sizeof(*commandbuffer), 0xFFFF);
+//				HAL_UART_Transmit(&huart1, onn, sizeof(onn), 0xFFFF);
+//				HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//			}
+//			/* off */
+//			else if(variable[exist] == 0) {
+//				HAL_UART_Transmit(&huart1, *commandbuffer, sizeof(*commandbuffer), 0xFFFF);
+//				HAL_UART_Transmit(&huart1, off, sizeof(off), 0xFFFF);
+//				HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//			}
+//			/* no on off */
+//			else {
+//				HAL_UART_Transmit(&huart1, commandbuffer[commandbufferstack], sizeof(commandbuffer[commandbufferstack]), 0xFFFF);
+//				HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//			}
+//			exist = 0;
+//		}
+//		/* 명령어가 리스트상에서 존재하지 않는다. */
+//		else {
+//			HAL_UART_Transmit(&huart1, ivalid, sizeof(ivalid), 0xFFFF);
+//			exist = 0;
+//		}
+//	}
+//	/* ?명령어가 아닌 경우 */
+//	else {
+//		for(int i = 0; i < strlen(commandlist); i++) {
+//					if(!strcmpi(commandbuffer[commandbufferstack], commandlist[i])) {
+//						exist = i;
+//					}
+//				}
+//		/* 정상 동작하면 OK를 return하는 함수가 필요한듯 */
+//		switch(exist) {
+//			case ENABLE:{
+//				uint16_t buffer = atoi(valuebuffer[commandbufferstack]);
+//				if(variable[3] == 1) {
+//					HAL_UART_Transmit(&huart1, faultison, strlen(faultison), 0xFFFF);
+//				}
+//				else if((buffer == 1) || (buffer == 0)) {
+//					variable[ENABLE] = buffer;
+//					HAL_UART_Transmit(&huart1, commandlist[exist], strlen(commandlist[exist]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, opt, strlen(opt), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, valuebuffer[commandbufferstack], strlen(valuebuffer[commandbufferstack]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//				}
+//				buffer = 0;
+//				break;
+//			}
+//			case BANDA:{
+//				uint16_t buffer = atoi(valuebuffer[commandbufferstack]);
+//				if(variable[3] == 1) {
+//					HAL_UART_Transmit(&huart1, faultison, strlen(faultison), 0xFFFF);
+//				}
+//				else if((buffer == 1) || (buffer == 0)) {
+//					variable[BANDA] = buffer;
+//					HAL_UART_Transmit(&huart1, commandlist[exist], strlen(commandlist[exist]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, opt, strlen(opt), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, valuebuffer[commandbufferstack], strlen(valuebuffer[commandbufferstack]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//				}
+//				buffer = 0;
+//				break;
+//			}
+//			case BANDB:{
+//				uint16_t buffer = atoi(valuebuffer[commandbufferstack]);
+//				if(variable[3] == 1) {
+//					HAL_UART_Transmit(&huart1, faultison, strlen(faultison), 0xFFFF);
+//				}
+//				else if((buffer == 1) || (buffer == 0)) {
+//					variable[BANDB] = buffer;
+//					HAL_UART_Transmit(&huart1, commandlist[exist], strlen(commandlist[exist]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, opt, strlen(opt), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, valuebuffer[commandbufferstack], strlen(valuebuffer[commandbufferstack]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//				}
+//				buffer = 0;
+//				break;
+//			}
+//			case BYPASS:{
+//				uint16_t buffer = atoi(valuebuffer[commandbufferstack]);
+//				if(variable[3] == 1) {
+//					HAL_UART_Transmit(&huart1, faultison, strlen(faultison), 0xFFFF);
+//				}
+//				else if((buffer == 1) || (buffer == 0)) {
+//					variable[BYPASS] = buffer;
+//					HAL_UART_Transmit(&huart1, commandlist[exist], strlen(commandlist[exist]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, opt, strlen(opt), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, valuebuffer[commandbufferstack], strlen(valuebuffer[commandbufferstack]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//				}
+//				buffer = 0;
+//				break;
+//			}
+//			case ATTEN:{
+//				uint16_t buffer = atoi(valuebuffer[commandbufferstack]);
+//				if(variable[3] == 1) {
+//					HAL_UART_Transmit(&huart1, faultison, strlen(faultison), 0xFFFF);
+//				}
+//				else if((buffer < 0) || (buffer > 30)) {
+//					HAL_UART_Transmit(&huart1, attenover, strlen(attenover), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//				}
+//				else {
+//					variable[ATTEN] = buffer;
+//					HAL_UART_Transmit(&huart1, commandlist[exist], strlen(commandlist[exist]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, opt, strlen(opt), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, valuebuffer[commandbufferstack], strlen(valuebuffer[commandbufferstack]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//				}
+//				buffer = 0;
+//				break;
+//			}
+//			case SETALC:{
+//				uint16_t buffer = atoi(valuebuffer[commandbufferstack]);
+//				if(variable[3] == 1) {
+//					HAL_UART_Transmit(&huart1, faultison, strlen(faultison), 0xFFFF);
+//				}
+//				else {
+//					variable[SETALC] = buffer;
+//					HAL_UART_Transmit(&huart1, commandlist[exist], strlen(commandlist[exist]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, opt, strlen(opt), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, valuebuffer[commandbufferstack], strlen(valuebuffer[commandbufferstack]), 0xFFFF);
+//					HAL_UART_Transmit(&huart1, ent, sizeof(ent), 0xFFFF);
+//				}
+//				buffer = 0;
+//				break;
+//			}
+//			default: {
+//				HAL_UART_Transmit(&huart1, nooper, sizeof(nooper), 0xFFFF);
+//			}
+//		}
+//	}
+//}

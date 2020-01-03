@@ -1,0 +1,457 @@
+/* USER CODE BEGIN Header */
+/**
+  ******************************************************************************
+  * @file           : main.c
+  * @brief          : Main program body
+  ******************************************************************************
+  * @attention
+  *
+  * <h2><center>&copy; Copyright (c) 2019 STMicroelectronics.
+  * All rights reserved.</center></h2>
+  *
+  * This software component is licensed by ST under BSD 3-Clause license,
+  * the "License"; You may not use this file except in compliance with the
+  * License. You may obtain a copy of the License at:
+  *                        opensource.org/licenses/BSD-3-Clause
+  *
+  ******************************************************************************
+  */
+/* USER CODE END Header */
+
+/* Includes ------------------------------------------------------------------*/
+#include "main.h"
+#include "adc.h"
+#include "dac.h"
+#include "dma.h"
+#include "eth.h"
+#include "spi.h"
+#include "tim.h"
+#include "usart.h"
+#include "gpio.h"
+
+/* Private includes ----------------------------------------------------------*/
+/* USER CODE BEGIN Includes */
+#include "commandexecute.h"
+/* USER CODE END Includes */
+
+/* Private typedef -----------------------------------------------------------*/
+/* USER CODE BEGIN PTD */
+/* USER CODE END PTD */
+
+/* Private define ------------------------------------------------------------*/
+/* USER CODE BEGIN PD */
+/* USER CODE END PD */
+
+/* Private macro -------------------------------------------------------------*/
+/* USER CODE BEGIN PM */
+
+/* USER CODE END PM */
+
+/* Private variables ---------------------------------------------------------*/
+
+/* USER CODE BEGIN PV */
+
+/* USER CODE END PV */
+
+/* Private function prototypes -----------------------------------------------*/
+void SystemClock_Config(void);
+/* USER CODE BEGIN PFP */
+
+/* USER CODE END PFP */
+
+/* Private user code ---------------------------------------------------------*/
+/* USER CODE BEGIN 0 */
+
+/* command uint16_t list */
+
+
+ uint16_t timer3, timer6, timer7, timer13;
+ uint16_t modecommand = 0;
+ uint8_t rxdata[SIZE];
+ uint16_t front = 0;
+ uint16_t exti;
+
+/* CLIST = 명령어 갯수 */
+
+uint8_t rxvaldata[COMBUFFER];
+uint8_t* commandbuffer[COMBUFFER];
+uint16_t commandbufferstack;
+uint16_t englishinputerror;
+
+uint8_t noexist[] = "Not match command in commandlist\r\n";
+uint8_t txbuffer[] = "'command mode on' \r\n'This message is comming from board'\r\n";
+uint8_t backspace[] = "\b";
+uint8_t blank[] = " ";
+uint8_t enter[] = "\r\n";
+uint16_t variable[CLIST];
+uint8_t matched[] = "match";
+
+extern uint16_t attencalculatedarray[31];
+extern uint8_t* commandlist[CLIST];
+
+uint8_t inputerror[] = "\r\nCheck input again.\r\n";
+
+uint16_t txbuffersize = sizeof(txbuffer);
+
+
+/*
+ * ADC, DAC
+ */
+
+
+uint16_t adc3[13];
+// *dac1_4095 = 2.93V
+uint16_t setdac[1];
+uint16_t setdacvalue;
+uint16_t adcstopped;
+
+uint16_t alcison;
+uint32_t oldTick, newTick, gapTick;
+
+/* USER CODE END 0 */
+
+/**
+  * @brief  The application entry point.
+  * @retval int
+  */
+int main(void)
+{
+  /* USER CODE BEGIN 1 */
+
+  /* USER CODE END 1 */
+  
+
+  /* MCU Configuration--------------------------------------------------------*/
+
+  /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
+  HAL_Init();
+
+  /* USER CODE BEGIN Init */
+
+  /* USER CODE END Init */
+
+  /* Configure the system clock */
+  SystemClock_Config();
+
+  /* USER CODE BEGIN SysInit */
+
+  /* USER CODE END SysInit */
+
+  /* Initialize all configured peripherals */
+  MX_GPIO_Init();
+  MX_TIM6_Init();
+  MX_TIM7_Init();
+  MX_TIM13_Init();
+  MX_TIM14_Init();
+  MX_USART1_UART_Init();
+  MX_ETH_Init();
+  MX_TIM3_Init();
+  MX_DMA_Init();
+  MX_ADC3_Init();
+  MX_DAC_Init();
+  MX_SPI1_Init();
+  /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Start_IT(&htim6);
+  HAL_TIM_Base_Start_IT(&htim3);
+  HAL_UART_Receive_IT(&huart1, &rxdata[front], 1);
+  HAL_ADC_Start_DMA(&hadc3, (uint32_t*)adc3, 13);
+  HAL_DAC_Start_DMA(&hdac, DAC_CHANNEL_1, (uint32_t*)setdac, 1, DAC_ALIGN_12B_R);
+//  HAL_TIM_Base_Start(&htim3);
+
+  /*
+   * ADC DAC start
+   *
+   * adc3[0]  Current0
+   * adc3[1]  Current1
+   * adc3[2]  Current2
+   * adc3[3]  Current3
+   * adc3[4]  Current4
+   * adc3[5]  Temp0
+   * adc3[6]  Voltage0
+   * adc3[7]  Voltage1
+   * adc3[8]  Forward0
+   * adc3[9]  Forward1
+   * adc3[10] Reflect0
+   * adc3[11] Reflect1
+   * adc3[12] Input0
+   *
+   * */
+
+  /* USER CODE END 2 */
+
+  /* Infinite loop */
+  /* USER CODE BEGIN WHILE */
+  while (1)
+  {
+
+    /* USER CODE END WHILE */
+    /* USER CODE BEGIN 3 */
+	  HAL_Delay(1000);
+  }
+  /* USER CODE END 3 */
+}
+
+/**
+  * @brief System Clock Configuration
+  * @retval None
+  */
+void SystemClock_Config(void)
+{
+  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+
+  /** Configure the main internal regulator output voltage 
+  */
+  __HAL_RCC_PWR_CLK_ENABLE();
+  __HAL_PWR_VOLTAGESCALING_CONFIG(PWR_REGULATOR_VOLTAGE_SCALE1);
+  /** Initializes the CPU, AHB and APB busses clocks 
+  */
+  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSE;
+  RCC_OscInitStruct.HSEState = RCC_HSE_ON;
+  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_ON;
+  RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
+  RCC_OscInitStruct.PLL.PLLM = 4;
+  RCC_OscInitStruct.PLL.PLLN = 168;
+  RCC_OscInitStruct.PLL.PLLP = RCC_PLLP_DIV2;
+  RCC_OscInitStruct.PLL.PLLQ = 4;
+  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
+  {
+    Error_Handler();
+  }
+  /** Initializes the CPU, AHB and APB busses clocks 
+  */
+  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
+                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
+  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_PLLCLK;
+  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
+  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV4;
+  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV2;
+
+  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_5) != HAL_OK)
+  {
+    Error_Handler();
+  }
+}
+
+/* USER CODE BEGIN 4 */
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	/* htm7 GPIO check timer */
+	if(htim->Instance == htim3.Instance)
+	{
+		timer3++;
+		if(timer3 == 999)
+		{
+			timer3 = 0;
+		}
+	}
+	/*
+	 * dac 전압 입력 타이머 입력 0일시 dac -> stop
+	 * dac 전압 입력시 dac -> start
+	 */
+    if(htim->Instance == htim6.Instance)
+    {
+		if(timer6 == 10)
+		{
+			timer6 = 0;
+	//    		  HAL_ADC_Start_IT(&hadc1);
+		}
+
+		if((setdacvalue == 0) && (adcstopped == 0))
+		{
+			HAL_ADC_Stop(&hadc);
+			timermadadcstopp = 1;
+		}
+		/* dac start는 commandexecute에서 선언 */
+		else
+		{
+			adcstopped = 1;
+			HAL_DAC_SetValue(&hdac, DAC_CHANNEL_1, DAC_ALIGN_12B_R, setdacvalue);
+		}
+    	timer6++;
+    }
+    if(htim->Instance == htim7.Instance)
+    {
+    	/* tempalarm check */
+    	timer7++;
+
+    	/* rising edge case */
+    	if(HAL_GPIO_ReadPin(GPIOE, Tempalarm_Pin) == GPIO_PIN_SET)
+    	{
+    		variable[TEMPALARM] = 1;
+    		if(variable[FAULT] == 0)
+    		{
+    			variable[SJKIM_ENABLE] = 0;
+    			variable[FAULT] = 1;
+    			HAL_GPIO_WritePin(GPIOG, Fault_Pin, GPIO_PIN_SET);
+    		}
+    	}
+    	else variable[TEMPALARM] = 0;
+    	/* interlock check */
+    	/* rising edge case */
+    	if(HAL_GPIO_ReadPin(GPIOE, Interlock_Pin) == GPIO_PIN_SET)
+    	{
+    		variable[INTERLOCK] = 1;
+    		if(variable[FAULT] == 0)
+    		{
+    			variable[SJKIM_ENABLE] = 0;
+				variable[FAULT] = 1;
+				HAL_GPIO_WritePin(GPIOG, Fault_Pin, GPIO_PIN_SET);
+			}
+    	}
+    	else variable[INTERLOCK] = 0;
+
+    	/* fault check critical section */
+    	if((variable[INTERLOCK] == 0) && (variable[TEMPALARM] == 0))
+    	{
+			variable[FAULT] = 0;
+			HAL_GPIO_WritePin(GPIOG, Fault_Pin, GPIO_PIN_RESET);
+			timer7 = 0;
+			HAL_TIM_Base_Stop_IT(&htim7);
+    	}
+    }
+
+    /* command execute */
+    if(htim->Instance == htim13.Instance)
+    {
+		timer13++;
+		int blankwhere = 0;
+		uint16_t length = strlen((const char*)rxdata);
+		uint16_t blankexistpara = 0;
+		/*
+		 * search blank
+		 * */
+		for(int i = 0; i < length; i++)
+		{
+			if(rxdata[i] == ' ')
+			{
+				blankexistpara = 1;
+				blankwhere = i;
+				i = length;
+			}
+		}
+		/* check and transfer command */
+		if(blankexistpara == 1)
+		{
+			blankexistpara = 0;
+			rxdata[blankwhere] = '\0';
+			for(int i = blankwhere; i < length; i++)
+			{
+				rxvaldata[i - blankwhere] = rxdata[i + 1];
+				rxdata[i + 1] = '\0';
+			}
+			comandexecute(rxdata, rxvaldata);
+		}
+		/* ? command transfer */
+		else if(rxdata[length - 1] == '?')
+		{
+			rxdata[length - 1] = '\0';
+			commandstate(rxdata);
+		}
+		modecommand = 0;
+		HAL_TIM_Base_Stop_IT(&htim13);
+    }
+}
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+	exti++;
+	HAL_TIM_Base_Start_IT(&htim7);
+}
+
+/* key input */
+void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart) {
+	if(huart->Instance == huart1.Instance)
+	{
+		switch(rxdata[front])
+		{
+			/* 엔터 */
+			case '\r':
+				HAL_UART_Transmit(&huart1, enter, sizeof(enter), 0xFFFF);
+				if(modecommand != 0)
+				{
+					rxdata[front] = '\0';
+					HAL_TIM_Base_Start_IT(&htim13);
+				}
+				front = ((front + 1) % (SIZE-1));
+				HAL_UART_Receive_IT(&huart1, &rxdata[front], 1);
+				break;
+			/* 입력모드 :입력시 modecommand->1 */
+			case ':':
+				if(modecommand == 0)
+				{
+					front = 0;
+					modecommand = 1;
+					for(int i = 0; i < sizeof(rxdata); i++)
+					{
+						rxdata[i] = '\0';
+						rxvaldata[i] = '\0';
+					}
+					HAL_UART_Transmit(&huart1, enter, sizeof(enter), 0xFFFF);
+					HAL_UART_Transmit(&huart1, txbuffer, sizeof(txbuffer), 0xFFFF);
+					HAL_UART_Receive_IT(&huart1, &rxdata[front], 1);
+				}
+			/* 이미 modecommand = 1인 상황에서 :입력을 받았을 때 처리해주기 위한 코드 */
+				else {
+					HAL_UART_Transmit(&huart1, &rxdata[front], 1, 0xFFFF);
+					front = ((front + 1) % (SIZE-1));
+					HAL_UART_Receive_IT(&huart1, &rxdata[front], 1);
+				}
+				break;
+			/* 백 스페이스 */
+			case '\177':
+				rxdata[front] = '\0';
+				if(front != 0) {
+					front = ((front - 1) % (SIZE-1));
+				}
+				else if(front == 0){
+					front= SIZE-1;
+				}
+				HAL_UART_Transmit(&huart1, backspace, 1, 0xFFFF);
+				HAL_UART_Transmit(&huart1, blank, 1, 0xFFFF);
+				HAL_UART_Transmit(&huart1, backspace, 1, 0xFFFF);
+				HAL_UART_Receive_IT(&huart1, &rxdata[front], 1);
+				break;
+			default:
+				HAL_UART_Transmit(&huart1, &rxdata[front], 1, 0xFFFF);
+				/* modecommand on일시 처리 */
+				front = ((front + 1) % (SIZE-1));
+				HAL_UART_Receive_IT(&huart1, &rxdata[front], 1);
+			break;
+		}
+	}
+}
+
+
+/* USER CODE END 4 */
+
+/**
+  * @brief  This function is executed in case of error occurrence.
+  * @retval None
+  */
+void Error_Handler(void)
+{
+  /* USER CODE BEGIN Error_Handler_Debug */
+  /* User can add his own implementation to report the HAL error return state */
+
+  /* USER CODE END Error_Handler_Debug */
+}
+
+#ifdef  USE_FULL_ASSERT
+/**
+  * @brief  Reports the name of the source file and the source line number
+  *         where the assert_param error has occurred.
+  * @param  file: pointer to the source file name
+  * @param  line: assert_param error line source number
+  * @retval None
+  */
+void assert_failed(uint8_t *file, uint32_t line)
+{ 
+  /* USER CODE BEGIN 6 */
+  /* User can add his own implementation to report the file name and line number,
+     tex: printf("Wrong parameters value: file %s on line %d\r\n", file, line) */
+  /* USER CODE END 6 */
+}
+#endif /* USE_FULL_ASSERT */
+
+/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

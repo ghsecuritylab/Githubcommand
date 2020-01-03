@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="valuecommand"/>
+		<item key="selection" value="SIZE"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="size"/>
+			<item value="SJKIM_SIZE"/>
+			<item value="VARLIST"/>
+			<item value="BUFFER"/>
+			<item value="SIZE"/>
+			<item value="adc"/>
 			<item value="valuecommand"/>
 			<item value="afterblank"/>
 			<item value="timer13"/>
@@ -17,14 +23,12 @@
 			<item value="combuffer"/>
 			<item value="commandstone"/>
 			<item value="commandtrue"/>
-			<item value="match"/>
-			<item value="length"/>
-			<item value="interlock"/>
-			<item value="tempalarm"/>
-			<item value="enable"/>
-			<item value="fault"/>
 		</list>
 		<list key="replacehistory">
+			<item value="SJKIM_SIZE"/>
+			<item value="SIZE"/>
+			<item value="size"/>
+			<item value="SJKIM_COMBUFFER"/>
 			<item value="variable[INTERLOCK]"/>
 			<item value="variable[TEMPALARM]"/>
 			<item value="variable[TEMPA]"/>
@@ -36,10 +40,6 @@
 			<item value=""/>
 			<item value="valuebuffer[commandbufferstack]"/>
 			<item value="strlen(commandlist)"/>
-			<item value="invalid"/>
-			<item value="ivaild"/>
-			<item value="modecommand[front]"/>
-			<item value="SIZE"/>
 		</list>
 	</section>
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog_dialogBounds">

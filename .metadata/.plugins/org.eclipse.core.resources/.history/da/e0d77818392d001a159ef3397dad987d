@@ -1,0 +1,27 @@
+/*
+ * commandexecute.h
+ *
+ *  Created on: Dec 10, 2019
+ *      Author: sungjinkim
+ */
+
+#ifndef INC_COMMANDEXECUTE_H_
+#define INC_COMMANDEXECUTE_H_
+
+#include "main.h"
+#include "tim.h"
+#include "usart.h"
+#include "gpio.h"
+
+#define SIZE 20
+#define CLIST 25
+#define VOLTPERDB 0.029
+#define OVERPOWER0 150
+
+
+void comandexecute(uint8_t* rxdata, uint8_t* rxvaldata);
+void commandstate(uint8_t* rxdata);
+//void commandexecute(uint8_t* commandbuffer, uint8_t* valuebuffer);
+void clearbuffer(void);
+#endif /* INC_COMMANDEXECUTE_H_ */
+

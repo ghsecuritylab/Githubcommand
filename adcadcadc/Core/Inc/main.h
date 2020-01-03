@@ -33,7 +33,9 @@ extern "C" {
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-
+#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 /* USER CODE END Includes */
 
 /* Exported types ------------------------------------------------------------*/
@@ -59,8 +61,8 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define Input0_Pin GPIO_PIN_4
-#define Input0_GPIO_Port GPIOF
+#define Input_Pin GPIO_PIN_4
+#define Input_GPIO_Port GPIOF
 #define Temp_Pin GPIO_PIN_5
 #define Temp_GPIO_Port GPIOF
 #define Forward0_Pin GPIO_PIN_6
@@ -85,7 +87,42 @@ void Error_Handler(void);
 #define Current2_GPIO_Port GPIOB
 #define Current3_Pin GPIO_PIN_1
 #define Current3_GPIO_Port GPIOB
+#define Tempalarm_Pin GPIO_PIN_0
+#define Tempalarm_GPIO_Port GPIOE
+#define Tempalarm_EXTI_IRQn EXTI0_IRQn
+#define Interlock_Pin GPIO_PIN_1
+#define Interlock_GPIO_Port GPIOE
+#define Interlock_EXTI_IRQn EXTI1_IRQn
 /* USER CODE BEGIN Private defines */
+
+#define TEMPALARM	0
+#define INTERLOCK	1
+#define ENABLE		2
+#define FAULT		3
+#define BANDA		4
+#define BANDB		5
+#define BYPASS		6
+#define CURRENT0	7
+#define CURRENT1	8
+#define CURRENT2	9
+#define CURRENT3	10
+#define CURRENT4	11
+#define TEMP0		12
+#define TEMP1		13
+#define TEMP2		14
+#define VOLTAGE0	15
+#define VOLTAGE1	16
+#define FORWARD0	17
+#define FORWARD1	18
+#define REFLECT0	19
+#define REFLECT1	20
+#define INPUT0		21
+#define INPUT1		22
+#define ATTEN		23
+#define SETALC		24
+
+#define ADC1NUM 7
+#define ADC3NUM 6
 
 /* USER CODE END Private defines */
 

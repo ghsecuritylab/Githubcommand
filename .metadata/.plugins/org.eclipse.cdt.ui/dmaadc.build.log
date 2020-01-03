@@ -1,0 +1,10 @@
+13:26:56 **** Incremental Build of configuration Debug for project dmaadc ****
+make -j7 all 
+arm-none-eabi-size   dmaadc.elf 
+   text	   data	    bss	    dec	    hex	filename
+  10152	     20	   1748	  11920	   2e90	dmaadc.elf
+Finished building: default.size.stdout
+ 
+
+13:26:56 Build Finished. 0 errors, 0 warnings. (took 91ms)
+

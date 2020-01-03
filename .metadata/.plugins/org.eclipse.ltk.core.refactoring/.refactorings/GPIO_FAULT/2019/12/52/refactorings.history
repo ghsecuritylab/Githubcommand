@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename resource &apos;GPIO_FAULT/Core/Inc/attencallculate.h&apos; to &apos;attencalculate.h&apos;" description="Rename resource &apos;attencallculate.h&apos;" flags="7" id="org.eclipse.ltk.core.refactoring.rename.resource" input="Core/Inc/attencallculate.h" name="attencalculate.h" stamp="1577321298514" updateReferences="true"/>
+</session>

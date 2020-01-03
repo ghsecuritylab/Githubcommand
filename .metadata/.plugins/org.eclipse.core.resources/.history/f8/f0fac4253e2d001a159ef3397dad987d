@@ -1,0 +1,40 @@
+/*
+ * commandexecute.h
+ *
+ *  Created on: Dec 10, 2019
+ *      Author: sungjinkim
+ */
+
+#ifndef INC_COMMANDEXECUTE_H_
+#define INC_COMMANDEXECUTE_H_
+
+#include "main.h"
+#include "tim.h"
+#include "usart.h"
+#include "gpio.h"
+
+#define SIZE 20
+#define CLIST 25
+
+#define VOLTPERDB 0.029
+
+#define MINFWDOUTPUT0 36.0
+#define MINFWDOUTPUT1 36.0
+#define MINREFOUTPUT0 36.0
+#define MINREFOUTPUT1 36.0
+
+#define MININPUT0 36.0
+
+#define OVERFWDOUTPUT0 4096.0
+#define OVERFWDOUTPUT1 4096.0
+#define OVERREFOUTPUT0 4096.0
+#define OVERREFOUTPUT1 4096.0
+
+#define OVERINPUT0 150.0
+
+void comandexecute(uint8_t* rxdata, uint8_t* rxvaldata);
+void commandstate(uint8_t* rxdata);
+//void commandexecute(uint8_t* commandbuffer, uint8_t* valuebuffer);
+void clearbuffer(void);
+#endif /* INC_COMMANDEXECUTE_H_ */
+

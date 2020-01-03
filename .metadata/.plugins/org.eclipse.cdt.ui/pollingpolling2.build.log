@@ -1,0 +1,10 @@
+12:43:38 **** Incremental Build of configuration Debug for project pollingpolling2 ****
+make -j7 all 
+arm-none-eabi-size   pollingpolling2.elf 
+   text	   data	    bss	    dec	    hex	filename
+   8012	     20	   1644	   9676	   25cc	pollingpolling2.elf
+Finished building: default.size.stdout
+ 
+
+12:43:38 Build Finished. 0 errors, 0 warnings. (took 217ms)
+
